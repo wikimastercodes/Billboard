@@ -1,0 +1,106 @@
+<html>
+<body bgcolor=black>
+<style type="text/css">
+label{
+width:100px;
+display:inline-block;
+}
+form{
+border-radius:10px;
+background:tan;
+color:black;
+height:500px;
+width:430px;
+}
+h1{
+text-align:center;
+padding-top: 20px;
+padding-bottom:10px;
+}
+#LOGIN{
+width:100%;
+margin-top:50px;
+margin-bottom:60px;
+padding-top: 10px;
+padding-bottom:10px;
+}
+#username{
+padding-top: 10px;
+padding-bottom:10px;
+margin-top:30px;
+margin-bottom:10px;
+}
+#password{
+padding-top: 10px;
+padding-bottom:10px;
+margin-top:10px;
+margin-bottom:10px;
+}
+.split {
+height:100%;
+width: 50%;
+position:fixed;
+z-index:1;
+top: 0;
+overflow-x: hidden;
+padding-top: 20px;
+}
+.left {
+left:200;
+background-color:olive;
+}
+.right {
+right:-270;
+background-color:black;
+}
+.centered {
+position:center;
+top:50%
+left:50%
+transform:translate(-50%,-50%);
+text-align:center;
+}
+</style>
+<div class="split right">
+<div class="centered">
+<form name="index.jsp" method="post">
+<h1> <font size="6">Admin Login Form</font></h1>
+<hr>
+<label>User Name</label>
+<input type="text" name="t1" placeholder="User Name" id="username">
+<br></br>
+<label>Password</label>
+<input type="password" name="t2" placeholder="Password" id="password">
+<br></br>
+<input type="submit" name="b1" value="LOGIN" id="LOGIN">
+<%
+String Add=request.getParameter("b1");
+if(Add!=null)
+{
+int login =Integer.parseInt(request.getParameter("t2"));
+int password=4518945;
+if(login==password)
+{
+response.sendRedirect("myform.jsp");
+}
+else
+{
+out.println("<b>Invalid Username and Password</b>");
+}
+}
+%>
+</form>
+</div>
+</div>
+<div class="split left">
+<center><h2><font color="tan" size="10" face="Arial Black">AMIRTHAM GROUPS</font></h2></center>
+<hr>
+<center><label><font size="4" color="tan">THE GOLDSMITH</font></label></center>
+<p align="center">Gold has been worked by humans in all cultures where the metal is available, either indigenously or imported, and the history of these activities is extensive. Superbly made objects from the ancient cultures of Africa, Asia, Europe, India, North America, Mesoamerica, and South America grace museums and collections throughout the world. The Copper Age Varna culture (Bulgaria) from the 5th millennium BC is credited with inventing goldsmith (gold metallurgy). The associated Varna Necropolis treasure contains the oldest golden jewellery in the world with an approximate age of over 6,000 years.</p>
+<p align="center">Some pieces date back thousands of years and were made using many techniques that still are used by modern goldsmiths. Techniques developed by some of those goldsmiths achieved a skill level that was lost and remained beyond the skills of those who followed, even to modern times. Researchers attempting to uncover the chemical techniques used by ancient artisans have remarked that their findings confirm that "the high level of competence reached by the artists and craftsmen of these ancient periods who produced objects of an artistic quality that could not be bettered in ancient times and has not yet been reached in modern ones."</p>
+<p align="center">In medieval Europe goldsmiths were organized into guilds and usually were one of the most important and wealthiest of the guilds in a city. The guild kept records of members and the marks they used on their products. These records, when they survive, are very useful to historians. Goldsmiths often acted as bankers, since they dealt in gold and had sufficient security for the safe storage of valuable items, though they were usually restrained from lending at interest, which was regarded as usury. In the Middle Ages, goldsmithing normally included silversmithing as well, but the brass workers and workers in other base metals normally were members of a separate guild, since the trades were not allowed to overlap. Many jewelers also were goldsmiths.</p><hr>
+<p align="center">This is the page we used to calculate intrest and generate bills.This page is only accessible for admin.</p>
+</div>
+</div>
+</body>
+</html>
